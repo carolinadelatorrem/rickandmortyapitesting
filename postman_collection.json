@@ -1,0 +1,3112 @@
+{
+	"version": 1,
+	"collections": [
+		{
+			"id": "e228b2d0-30c7-4422-977c-2af354e15fab",
+			"name": "rickandmortyapi",
+			"description": "Collection of test cases for Rick and Morty API.",
+			"auth": null,
+			"events": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e01222b5-530c-4c9f-bdd4-41139e4d2f63",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "75b0164c-71a0-44c8-b3b2-1125a7510575",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"variables": [],
+			"order": [
+				"ea4075d6-f6bd-4362-817c-6cfd96b90473",
+				"9c08bda7-d2f9-44ac-9c6a-da2d6ccc8182",
+				"f2111bc9-6b28-4f86-a388-6e0f851a0fc4",
+				"a52c214b-71a0-4257-928a-0bc3590575cc",
+				"48ded5b9-fcc4-4852-b608-154f39a6a48f",
+				"287e939d-6912-4758-a75d-dd041a722013",
+				"f7420277-43db-4e7f-90f8-847236476e34",
+				"1b6706bc-d1ff-43ff-adca-8373ca96b858",
+				"d93cead1-5668-48f4-9017-b1e262ce7285",
+				"562fa9bd-0cc0-4b98-be56-aaf3a79b9cec",
+				"34b28408-7225-4052-8627-93ba8c052443",
+				"0c90cd88-b5fb-4645-b912-049cd57bb7af",
+				"6360fcea-d6eb-4c9d-9ada-78d427f7c61e",
+				"54d5dad0-90fc-4f2a-9ed4-f9e6861d06ed",
+				"7ff6f6ba-8b8e-4a42-ad84-6127332afc71",
+				"d225860a-e597-4e77-aa39-52fd212db914",
+				"d49946bf-8f09-4368-b076-fd41ba386d28",
+				"01d9e821-c2b2-4e39-9686-e8c771cb1a7d",
+				"f68b1c71-004b-4636-b290-6dfe6d60ac4e",
+				"ae72f731-d2a0-4409-89a7-e2ab0bb8e7b1",
+				"9b9b6697-b92b-4c94-96f0-ba92fa9e0504",
+				"69a147e6-7485-4a14-a7b3-0e0356f49221",
+				"69294f04-d178-4abc-b696-d5114ea25f22",
+				"8514da50-50ac-451a-bf00-fa3cec7b21af",
+				"a6f19488-3d94-4aaf-9d3e-ab7a6120b068",
+				"78c17005-8f6c-4b12-82b3-d4bfce0716f5",
+				"f4225bf7-3a8b-4a00-9991-dda2ec6814bd",
+				"07ab5743-76a6-4f71-8b61-53a1ddbd8aa8",
+				"302e10a4-8254-44f4-b331-c65d18f3872d",
+				"273e18e0-07fb-4e99-aa65-3d7c1f4ee21e",
+				"2d25615f-0356-4931-9ce7-ed260b417e4c",
+				"6d908aba-aae2-4fe5-8a00-ee576bb82a30",
+				"aafa5f46-1b77-48c7-8f0d-cae0b1113ac5",
+				"d51826a2-3f12-498a-a70f-5b1f2e08e2f5",
+				"ee94e8fc-3533-4689-a3bd-4a470f0a1fe5",
+				"442e39ab-2ed3-4a20-a0e3-31a6dc6ffb0b",
+				"4096947c-909f-4a7c-9727-18697df46efb",
+				"6a9519dc-350b-40fd-9cf6-c66a55fb4019",
+				"cb140454-53f8-49b6-ab70-af0b6e235949",
+				"3c1f5967-5a1f-4331-9ef1-6131f77420dd",
+				"fc47df81-d199-4093-b2a8-f15996c7a014",
+				"3943a3da-dd94-4b5b-a173-d804cd9406ed",
+				"f76f10a9-beb3-479b-8db9-8de39f2374f2",
+				"2ca6eee7-45ac-4144-85d3-5f0c4d189f86",
+				"53f1505b-8122-4cae-b451-c3414b58855f"
+			],
+			"folders_order": [],
+			"protocolProfileBehavior": {},
+			"folders": [],
+			"requests": [
+				{
+					"id": "01d9e821-c2b2-4e39-9686-e8c771cb1a7d",
+					"name": "Get random valid episode page",
+					"url": "https://rickandmortyapi.com/api/episode/?page={{randomPage}}",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "page",
+							"value": "{{randomPage}}",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4f87e671-a99a-499e-a66d-e9ce17a15f6c",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"eval(pm.environment.get(\"commonTests\"))();",
+									"",
+									"eval(pm.environment.get(\"responseContains\"))();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "d2dc434b-3ff8-4c92-b168-8b67cac0cc0c",
+								"exec": [
+									"let maxEpisodePages = pm.environment.get(\"maxEpisodePages\");",
+									"",
+									"let utils = eval(pm.environment.get(\"utils\"))();",
+									"",
+									"let randomPage = utils.myFunctions.genRandNumBetween(1, maxEpisodePages);",
+									"",
+									"pm.environment.set(\"randomPage\", randomPage);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": "let maxEpisodePages = pm.environment.get(\"maxEpisodePages\");\n\nlet utils = eval(pm.environment.get(\"utils\"))();\n\nlet randomPage = utils.myFunctions.genRandNumBetween(1, maxEpisodePages);\n\npm.environment.set(\"randomPage\", randomPage);",
+					"tests": "var jsonData = pm.response.json();\n\neval(pm.environment.get(\"commonTests\"))();\n\neval(pm.environment.get(\"responseContains\"))();",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "07ab5743-76a6-4f71-8b61-53a1ddbd8aa8",
+					"name": "Get invalid episode list",
+					"url": "https://rickandmortyapi.com/api/episode/:list",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [
+						{
+							"key": "list",
+							"value": "{{invalidList}}"
+						}
+					],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "3c4eb95d-6fab-4e89-921c-cd135744ff23",
+								"exec": [
+									"let maxEpisodeCount = pm.environment.get(\"maxEpisodeCount\");",
+									"",
+									"let charNumber = 3;",
+									"",
+									"let utils = eval(pm.environment.get(\"utils\"))();",
+									"",
+									"invalidList = [];",
+									"",
+									"for(var i=0; i < charNumber; i++){",
+									"    let iteration = utils.myFunctions.genRandNumBetween(maxEpisodeCount + 1 , maxEpisodeCount + 1000);",
+									"    invalidList.push(iteration);",
+									"    console.log(iteration);",
+									"}",
+									"",
+									"pm.environment.set(\"invalidList\", invalidList);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f728885f-e931-4592-be96-e409910c9bc4",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status code should be 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Payload should be JSON formatted\", function () { ",
+									"        pm.response.to.be.json;",
+									"    });",
+									"    ",
+									"pm.test(\"Payload should have a body\", function () { ",
+									"        pm.response.to.be.withBody;",
+									"    });",
+									"    ",
+									"pm.test(\"Content-Type should be present\", function () {",
+									"        pm.response.to.have.header(\"Content-Type\");",
+									"    });",
+									"    ",
+									"pm.test(\"Response should be en empty array\", function () {",
+									"    pm.expect(jsonData).to.be.an('array').that.is.empty;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": "let maxEpisodeCount = pm.environment.get(\"maxEpisodeCount\");\n\nlet charNumber = 3;\n\nlet utils = eval(pm.environment.get(\"utils\"))();\n\ninvalidList = [];\n\nfor(var i=0; i < charNumber; i++){\n    let iteration = utils.myFunctions.genRandNumBetween(maxEpisodeCount + 1 , maxEpisodeCount + 1000);\n    invalidList.push(iteration);\n    console.log(iteration);\n}\n\npm.environment.set(\"invalidList\", invalidList);",
+					"tests": "var jsonData = pm.response.json();\n\npm.test(\"Status code should be 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Payload should be JSON formatted\", function () { \n        pm.response.to.be.json;\n    });\n    \npm.test(\"Payload should have a body\", function () { \n        pm.response.to.be.withBody;\n    });\n    \npm.test(\"Content-Type should be present\", function () {\n        pm.response.to.have.header(\"Content-Type\");\n    });\n    \npm.test(\"Response should be en empty array\", function () {\n    pm.expect(jsonData).to.be.an('array').that.is.empty;\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {
+						"list": "{{invalidList}}"
+					}
+				},
+				{
+					"id": "0c90cd88-b5fb-4645-b912-049cd57bb7af",
+					"name": "Get random valid multiple locations",
+					"url": "https://rickandmortyapi.com/api/location/:list",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [
+						{
+							"key": "list",
+							"value": "{{randomList}}"
+						}
+					],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "adf91de0-1fe1-4996-8130-aa5beddde3e8",
+								"exec": [
+									"let maxLocationCount = pm.environment.get(\"maxLocationCount\");",
+									"",
+									"let locationNumber = 3;",
+									"",
+									"pm.environment.set(\"locationNumber\", locationNumber);",
+									"",
+									"let utils = eval(pm.environment.get(\"utils\"))();",
+									"",
+									"randomList = [];",
+									"",
+									"for(var i=0; i < locationNumber; i++){",
+									"    let iteration = utils.myFunctions.genRandNumBetween(1,maxLocationCount);",
+									"    randomList.push(iteration);",
+									"    console.log(iteration);",
+									"}",
+									"",
+									"pm.environment.set(\"randomList\", randomList);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "783b89df-bacd-42b7-a05a-fa42c33892d1",
+								"exec": [
+									"let randomList = pm.environment.get(\"randomList\");",
+									"",
+									"let locationNumber = pm.environment.get(\"locationNumber\");",
+									"",
+									"randomList = randomList.sort(function (a, b) {  return a - b;  });",
+									"",
+									"randomList = randomList.sort((a, b) => a - b);",
+									"",
+									"console.log(randomList);",
+									"",
+									"var jsonData = pm.response.json();",
+									"",
+									"eval(pm.environment.get(\"commonTests\"))();",
+									"",
+									"pm.test(\"Response should be an array\", function () {",
+									"        pm.expect(jsonData).to.be.an('array');",
+									"});",
+									"",
+									"pm.test(\"Response should include requested locations\", function () {",
+									"        for(var i=0; i < locationNumber; i++){",
+									"            pm.expect(jsonData[i].id).to.equals(randomList[i]);",
+									"        }",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": "let maxLocationCount = pm.environment.get(\"maxLocationCount\");\n\nlet locationNumber = 3;\n\npm.environment.set(\"locationNumber\", locationNumber);\n\nlet utils = eval(pm.environment.get(\"utils\"))();\n\nrandomList = [];\n\nfor(var i=0; i < locationNumber; i++){\n    let iteration = utils.myFunctions.genRandNumBetween(1,maxLocationCount);\n    randomList.push(iteration);\n    console.log(iteration);\n}\n\npm.environment.set(\"randomList\", randomList);",
+					"tests": "let randomList = pm.environment.get(\"randomList\");\n\nlet locationNumber = pm.environment.get(\"locationNumber\");\n\nrandomList = randomList.sort(function (a, b) {  return a - b;  });\n\nrandomList = randomList.sort((a, b) => a - b);\n\nconsole.log(randomList);\n\nvar jsonData = pm.response.json();\n\neval(pm.environment.get(\"commonTests\"))();\n\npm.test(\"Response should be an array\", function () {\n        pm.expect(jsonData).to.be.an('array');\n});\n\npm.test(\"Response should include requested locations\", function () {\n        for(var i=0; i < locationNumber; i++){\n            pm.expect(jsonData[i].id).to.equals(randomList[i]);\n        }\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {
+						"list": "{{randomList}}"
+					}
+				},
+				{
+					"id": "1b6706bc-d1ff-43ff-adca-8373ca96b858",
+					"name": "Get valid filtered characters by all criteria",
+					"url": "https://rickandmortyapi.com/api/character/?name=rick&status=alive&species=human&gender=male&type=clone",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "name",
+							"value": "rick",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "status",
+							"value": "alive",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "species",
+							"value": "human",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "gender",
+							"value": "male",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "type",
+							"value": "clone",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e79ff480-9007-4cb6-b5c6-b7d23c19d5a8",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"eval(pm.environment.get(\"commonTests\"))();",
+									"",
+									"eval(pm.environment.get(\"responseContains\"))();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\neval(pm.environment.get(\"commonTests\"))();\n\neval(pm.environment.get(\"responseContains\"))();",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "273e18e0-07fb-4e99-aa65-3d7c1f4ee21e",
+					"name": "Get list with valid and invalid location id",
+					"url": "https://rickandmortyapi.com/api/location/:list",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [
+						{
+							"key": "list",
+							"value": "{{mixList}}"
+						}
+					],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "3c4eb95d-6fab-4e89-921c-cd135744ff23",
+								"exec": [
+									"let maxLocationCount = pm.environment.get(\"maxLocationCount\");",
+									"",
+									"let utils = eval(pm.environment.get(\"utils\"))();",
+									"",
+									"let invalidLocId = utils.myFunctions.genRandNumBetween(maxLocationCount + 1 , maxLocationCount + 1000);",
+									"",
+									"pm.environment.set(\"invalidLocId\", invalidLocId);",
+									"",
+									"let validLocId = utils.myFunctions.genRandNumBetween(1 , maxLocationCount);",
+									"",
+									"pm.environment.set(\"validLocId\", validLocId);",
+									"",
+									"mixList = [validLocId, invalidLocId];",
+									"",
+									"pm.environment.set(\"mixList\", mixList);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f728885f-e931-4592-be96-e409910c9bc4",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"let validLocId = pm.environment.get(\"validLocId\");",
+									"",
+									"let invalidLocId = pm.environment.get(\"invalidLocId\");",
+									"",
+									"pm.test(\"Status code should be 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Payload should be JSON formatted\", function () { ",
+									"        pm.response.to.be.json;",
+									"    });",
+									"    ",
+									"pm.test(\"Payload should have a body\", function () { ",
+									"        pm.response.to.be.withBody;",
+									"    });",
+									"    ",
+									"pm.test(\"Content-Type should be present\", function () {",
+									"        pm.response.to.have.header(\"Content-Type\");",
+									"    });",
+									"    ",
+									"pm.test(\"Response should include valid requested character\", function () {",
+									"        pm.expect(jsonData[0].id).to.equals(validLocId);",
+									"});",
+									"",
+									"pm.test(\"Response should not include invalid requested character\", function () {",
+									"        pm.expect(jsonData).to.not.have.keys(invalidLocId);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": "let maxLocationCount = pm.environment.get(\"maxLocationCount\");\n\nlet utils = eval(pm.environment.get(\"utils\"))();\n\nlet invalidLocId = utils.myFunctions.genRandNumBetween(maxLocationCount + 1 , maxLocationCount + 1000);\n\npm.environment.set(\"invalidLocId\", invalidLocId);\n\nlet validLocId = utils.myFunctions.genRandNumBetween(1 , maxLocationCount);\n\npm.environment.set(\"validLocId\", validLocId);\n\nmixList = [validLocId, invalidLocId];\n\npm.environment.set(\"mixList\", mixList);",
+					"tests": "var jsonData = pm.response.json();\n\nlet validLocId = pm.environment.get(\"validLocId\");\n\nlet invalidLocId = pm.environment.get(\"invalidLocId\");\n\npm.test(\"Status code should be 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Payload should be JSON formatted\", function () { \n        pm.response.to.be.json;\n    });\n    \npm.test(\"Payload should have a body\", function () { \n        pm.response.to.be.withBody;\n    });\n    \npm.test(\"Content-Type should be present\", function () {\n        pm.response.to.have.header(\"Content-Type\");\n    });\n    \npm.test(\"Response should include valid requested character\", function () {\n        pm.expect(jsonData[0].id).to.equals(validLocId);\n});\n\npm.test(\"Response should not include invalid requested character\", function () {\n        pm.expect(jsonData).to.not.have.keys(invalidLocId);\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {
+						"list": "{{mixList}}"
+					}
+				},
+				{
+					"id": "287e939d-6912-4758-a75d-dd041a722013",
+					"name": "Get valid filtered characters by name and status",
+					"url": "https://rickandmortyapi.com/api/character/?name=rick&status=alive",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "name",
+							"value": "rick",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "status",
+							"value": "alive",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e79ff480-9007-4cb6-b5c6-b7d23c19d5a8",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"eval(pm.environment.get(\"commonTests\"))();",
+									"",
+									"eval(pm.environment.get(\"responseContains\"))();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\neval(pm.environment.get(\"commonTests\"))();\n\neval(pm.environment.get(\"responseContains\"))();",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "2ca6eee7-45ac-4144-85d3-5f0c4d189f86",
+					"name": "Try to send POST request",
+					"url": "https://rickandmortyapi.com/api/",
+					"description": "",
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8aa5eb4e-79b5-476d-ab10-63d0dd5a4da9",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status code should be 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});",
+									"",
+									"pm.test(\"Payload should be JSON formatted\", function () { ",
+									"        pm.response.to.be.json;",
+									"    });",
+									"    ",
+									"pm.test(\"Payload should have a body\", function () { ",
+									"        pm.response.to.be.withBody;",
+									"    });",
+									"    ",
+									"pm.test(\"Content-Type should be present\", function () {",
+									"        pm.response.to.have.header(\"Content-Type\");",
+									"    });",
+									"    ",
+									"pm.test(\"Response should be an error message\", function () {",
+									"    pm.expect(jsonData.error).to.eql(\"There is nothing here.\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\npm.test(\"Status code should be 404\", function () {\n    pm.response.to.have.status(404);\n});\n\npm.test(\"Payload should be JSON formatted\", function () { \n        pm.response.to.be.json;\n    });\n    \npm.test(\"Payload should have a body\", function () { \n        pm.response.to.be.withBody;\n    });\n    \npm.test(\"Content-Type should be present\", function () {\n        pm.response.to.have.header(\"Content-Type\");\n    });\n    \npm.test(\"Response should be an error message\", function () {\n    pm.expect(jsonData.error).to.eql(\"There is nothing here.\");\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"rawModeData": "{\n\t\"season\": \"https://rickandmortyapi.com/api/seasons/\"\n}",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "2d25615f-0356-4931-9ce7-ed260b417e4c",
+					"name": "Get list with valid and invalid episode id",
+					"url": "https://rickandmortyapi.com/api/episode/:list",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [
+						{
+							"key": "list",
+							"value": "{{mixList}}"
+						}
+					],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "3c4eb95d-6fab-4e89-921c-cd135744ff23",
+								"exec": [
+									"let maxEpisodeCount = pm.environment.get(\"maxEpisodeCount\");",
+									"",
+									"let utils = eval(pm.environment.get(\"utils\"))();",
+									"",
+									"let invalidEpiId = utils.myFunctions.genRandNumBetween(maxEpisodeCount + 1 , maxEpisodeCount + 1000);",
+									"",
+									"pm.environment.set(\"invalidEpiId\", invalidEpiId);",
+									"",
+									"let validEpiId = utils.myFunctions.genRandNumBetween(1 , maxEpisodeCount);",
+									"",
+									"pm.environment.set(\"validEpiId\", validEpiId);",
+									"",
+									"mixList = [validEpiId, invalidEpiId];",
+									"",
+									"pm.environment.set(\"mixList\", mixList);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f728885f-e931-4592-be96-e409910c9bc4",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"let validEpiId = pm.environment.get(\"validEpiId\");",
+									"",
+									"let invalidEpiId = pm.environment.get(\"invalidEpiId\");",
+									"",
+									"pm.test(\"Status code should be 200\", function() {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Payload should be JSON formatted\", function() {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Payload should have a body\", function() {",
+									"    pm.response.to.be.withBody;",
+									"});",
+									"",
+									"pm.test(\"Content-Type should be present\", function() {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"pm.test(\"Response should include valid requested character\", function() {",
+									"    pm.expect(jsonData[0].id).to.equals(validEpiId);",
+									"});",
+									"",
+									"pm.test(\"Response should not include invalid requested character\", function() {",
+									"    pm.expect(jsonData).to.not.have.keys(invalidEpiId);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": "let maxEpisodeCount = pm.environment.get(\"maxEpisodeCount\");\n\nlet utils = eval(pm.environment.get(\"utils\"))();\n\nlet invalidEpiId = utils.myFunctions.genRandNumBetween(maxEpisodeCount + 1 , maxEpisodeCount + 1000);\n\npm.environment.set(\"invalidEpiId\", invalidEpiId);\n\nlet validEpiId = utils.myFunctions.genRandNumBetween(1 , maxEpisodeCount);\n\npm.environment.set(\"validEpiId\", validEpiId);\n\nmixList = [validEpiId, invalidEpiId];\n\npm.environment.set(\"mixList\", mixList);",
+					"tests": "var jsonData = pm.response.json();\n\nlet validEpiId = pm.environment.get(\"validEpiId\");\n\nlet invalidEpiId = pm.environment.get(\"invalidEpiId\");\n\npm.test(\"Status code should be 200\", function() {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Payload should be JSON formatted\", function() {\n    pm.response.to.be.json;\n});\n\npm.test(\"Payload should have a body\", function() {\n    pm.response.to.be.withBody;\n});\n\npm.test(\"Content-Type should be present\", function() {\n    pm.response.to.have.header(\"Content-Type\");\n});\n\npm.test(\"Response should include valid requested character\", function() {\n    pm.expect(jsonData[0].id).to.equals(validEpiId);\n});\n\npm.test(\"Response should not include invalid requested character\", function() {\n    pm.expect(jsonData).to.not.have.keys(invalidEpiId);\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {
+						"list": "{{mixList}}"
+					}
+				},
+				{
+					"id": "302e10a4-8254-44f4-b331-c65d18f3872d",
+					"name": "Get list with valid and invalid character id",
+					"url": "https://rickandmortyapi.com/api/character/:list",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [
+						{
+							"key": "list",
+							"value": "{{mixList}}"
+						}
+					],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "3c4eb95d-6fab-4e89-921c-cd135744ff23",
+								"exec": [
+									"let maxCharacterCount = pm.environment.get(\"maxCharacterCount\");",
+									"",
+									"let utils = eval(pm.environment.get(\"utils\"))();",
+									"",
+									"let invalidCharId = utils.myFunctions.genRandNumBetween(maxCharacterCount + 1 , maxCharacterCount + 1000);",
+									"",
+									"pm.environment.set(\"invalidCharId\", invalidCharId);",
+									"",
+									"let validCharId = utils.myFunctions.genRandNumBetween(1 , maxCharacterCount);",
+									"",
+									"pm.environment.set(\"validCharId\", validCharId);",
+									"",
+									"mixList = [validCharId, invalidCharId];",
+									"",
+									"pm.environment.set(\"mixList\", mixList);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f728885f-e931-4592-be96-e409910c9bc4",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"let validCharId = pm.environment.get(\"validCharId\");",
+									"",
+									"let invalidCharId = pm.environment.get(\"invalidCharId\");",
+									"",
+									"pm.test(\"Status code should be 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Payload should be JSON formatted\", function () { ",
+									"        pm.response.to.be.json;",
+									"    });",
+									"    ",
+									"pm.test(\"Payload should have a body\", function () { ",
+									"        pm.response.to.be.withBody;",
+									"    });",
+									"    ",
+									"pm.test(\"Content-Type should be present\", function () {",
+									"        pm.response.to.have.header(\"Content-Type\");",
+									"    });",
+									"    ",
+									"pm.test(\"Response should include valid requested character\", function () {",
+									"        pm.expect(jsonData[0].id).to.equals(validCharId);",
+									"});",
+									"",
+									"pm.test(\"Response should not include invalid requested character\", function () {",
+									"        pm.expect(jsonData).to.not.have.keys(invalidCharId);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": "let maxCharacterCount = pm.environment.get(\"maxCharacterCount\");\n\nlet utils = eval(pm.environment.get(\"utils\"))();\n\nlet invalidCharId = utils.myFunctions.genRandNumBetween(maxCharacterCount + 1 , maxCharacterCount + 1000);\n\npm.environment.set(\"invalidCharId\", invalidCharId);\n\nlet validCharId = utils.myFunctions.genRandNumBetween(1 , maxCharacterCount);\n\npm.environment.set(\"validCharId\", validCharId);\n\nmixList = [validCharId, invalidCharId];\n\npm.environment.set(\"mixList\", mixList);",
+					"tests": "var jsonData = pm.response.json();\n\nlet validCharId = pm.environment.get(\"validCharId\");\n\nlet invalidCharId = pm.environment.get(\"invalidCharId\");\n\npm.test(\"Status code should be 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Payload should be JSON formatted\", function () { \n        pm.response.to.be.json;\n    });\n    \npm.test(\"Payload should have a body\", function () { \n        pm.response.to.be.withBody;\n    });\n    \npm.test(\"Content-Type should be present\", function () {\n        pm.response.to.have.header(\"Content-Type\");\n    });\n    \npm.test(\"Response should include valid requested character\", function () {\n        pm.expect(jsonData[0].id).to.equals(validCharId);\n});\n\npm.test(\"Response should not include invalid requested character\", function () {\n        pm.expect(jsonData).to.not.have.keys(invalidCharId);\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {
+						"list": "{{mixList}}"
+					}
+				},
+				{
+					"id": "34b28408-7225-4052-8627-93ba8c052443",
+					"name": "Get random valid location page",
+					"url": "https://rickandmortyapi.com/api/location/?page={{randomPage}}",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "page",
+							"value": "{{randomPage}}",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4f87e671-a99a-499e-a66d-e9ce17a15f6c",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"eval(pm.environment.get(\"commonTests\"))();",
+									"",
+									"eval(pm.environment.get(\"responseContains\"))();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "d2dc434b-3ff8-4c92-b168-8b67cac0cc0c",
+								"exec": [
+									"let maxLocationPages = pm.environment.get(\"maxLocationPages\");",
+									"",
+									"let utils = eval(pm.environment.get(\"utils\"))();",
+									"",
+									"let randomPage = utils.myFunctions.genRandNumBetween(1,maxLocationPages);",
+									"",
+									"pm.environment.set(\"randomPage\", randomPage);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": "let maxLocationPages = pm.environment.get(\"maxLocationPages\");\n\nlet utils = eval(pm.environment.get(\"utils\"))();\n\nlet randomPage = utils.myFunctions.genRandNumBetween(1,maxLocationPages);\n\npm.environment.set(\"randomPage\", randomPage);",
+					"tests": "var jsonData = pm.response.json();\n\neval(pm.environment.get(\"commonTests\"))();\n\neval(pm.environment.get(\"responseContains\"))();",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "3943a3da-dd94-4b5b-a173-d804cd9406ed",
+					"name": "Get a location query with no results",
+					"url": "https://rickandmortyapi.com/api/location/?name=rick&type=alive&dimension=human",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "name",
+							"value": "rick",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "type",
+							"value": "alive",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "dimension",
+							"value": "human",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8741b154-d6f0-43dc-8536-2de1a100d4b1",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"eval(pm.environment.get(\"notFoundTests\"))();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\neval(pm.environment.get(\"notFoundTests\"))();",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "3c1f5967-5a1f-4331-9ef1-6131f77420dd",
+					"name": "Get episode invalid page number",
+					"url": "https://rickandmortyapi.com/api/episode/?name=rick&episode=s05&page=10",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "name",
+							"value": "rick",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "episode",
+							"value": "s05",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "page",
+							"value": "10",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "721e3669-cd7e-49d7-b74d-0de1dc3f758a",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"eval(pm.environment.get(\"notFoundTests\"))();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\neval(pm.environment.get(\"notFoundTests\"))();",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "4096947c-909f-4a7c-9727-18697df46efb",
+					"name": "Get episodes with invalid values",
+					"url": "https://rickandmortyapi.com/api/episode/pilot, ending",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1928305d-e27e-4cb2-9ce3-c7952eaedd5d",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status code should be 500\", function () {",
+									"    pm.response.to.have.status(500);",
+									"});",
+									"",
+									"pm.test(\"Payload should be JSON formatted\", function () { ",
+									"        pm.response.to.be.json;",
+									"    });",
+									"    ",
+									"pm.test(\"Payload should have a body\", function () { ",
+									"        pm.response.to.be.withBody;",
+									"    });",
+									"    ",
+									"pm.test(\"Content-Type should be present\", function () {",
+									"        pm.response.to.have.header(\"Content-Type\");",
+									"    });",
+									"    ",
+									"pm.test(\"Response should be an error message\", function () {",
+									"    pm.expect(jsonData.error).to.eql(\"Cast to number failed for value \\\"NaN\\\" at path \\\"id\\\" for model \\\"Episode\\\"\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\npm.test(\"Status code should be 500\", function () {\n    pm.response.to.have.status(500);\n});\n\npm.test(\"Payload should be JSON formatted\", function () { \n        pm.response.to.be.json;\n    });\n    \npm.test(\"Payload should have a body\", function () { \n        pm.response.to.be.withBody;\n    });\n    \npm.test(\"Content-Type should be present\", function () {\n        pm.response.to.have.header(\"Content-Type\");\n    });\n    \npm.test(\"Response should be an error message\", function () {\n    pm.expect(jsonData.error).to.eql(\"Cast to number failed for value \\\"NaN\\\" at path \\\"id\\\" for model \\\"Episode\\\"\");\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "442e39ab-2ed3-4a20-a0e3-31a6dc6ffb0b",
+					"name": "Get locations with invalid values",
+					"url": "https://rickandmortyapi.com/api/location/earth, space",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1928305d-e27e-4cb2-9ce3-c7952eaedd5d",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status code should be 500\", function () {",
+									"    pm.response.to.have.status(500);",
+									"});",
+									"",
+									"pm.test(\"Payload should be JSON formatted\", function () { ",
+									"        pm.response.to.be.json;",
+									"    });",
+									"    ",
+									"pm.test(\"Payload should have a body\", function () { ",
+									"        pm.response.to.be.withBody;",
+									"    });",
+									"    ",
+									"pm.test(\"Content-Type should be present\", function () {",
+									"        pm.response.to.have.header(\"Content-Type\");",
+									"    });",
+									"    ",
+									"pm.test(\"Response should be an error message\", function () {",
+									"    pm.expect(jsonData.error).to.eql(\"Cast to number failed for value \\\"NaN\\\" at path \\\"id\\\" for model \\\"Location\\\"\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\npm.test(\"Status code should be 500\", function () {\n    pm.response.to.have.status(500);\n});\n\npm.test(\"Payload should be JSON formatted\", function () { \n        pm.response.to.be.json;\n    });\n    \npm.test(\"Payload should have a body\", function () { \n        pm.response.to.be.withBody;\n    });\n    \npm.test(\"Content-Type should be present\", function () {\n        pm.response.to.have.header(\"Content-Type\");\n    });\n    \npm.test(\"Response should be an error message\", function () {\n    pm.expect(jsonData.error).to.eql(\"Cast to number failed for value \\\"NaN\\\" at path \\\"id\\\" for model \\\"Location\\\"\");\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "48ded5b9-fcc4-4852-b608-154f39a6a48f",
+					"name": "Get random valid multiple characters",
+					"url": "https://rickandmortyapi.com/api/character/:list",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [
+						{
+							"key": "list",
+							"value": "{{randomList}}"
+						}
+					],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "adf91de0-1fe1-4996-8130-aa5beddde3e8",
+								"exec": [
+									"let maxCharacterCount = pm.environment.get(\"maxCharacterCount\");",
+									"",
+									"let charNumber = 3;",
+									"",
+									"pm.environment.set(\"charNumber\", charNumber);",
+									"",
+									"let utils = eval(pm.environment.get(\"utils\"))();",
+									"",
+									"randomList = [];",
+									"",
+									"for(var i=0; i < charNumber; i++){",
+									"    let iteration = utils.myFunctions.genRandNumBetween(1,maxCharacterCount);",
+									"    randomList.push(iteration);",
+									"    console.log(iteration);",
+									"}",
+									"",
+									"pm.environment.set(\"randomList\", randomList);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "783b89df-bacd-42b7-a05a-fa42c33892d1",
+								"exec": [
+									"let randomList = pm.environment.get(\"randomList\");",
+									"",
+									"let charNumber = pm.environment.get(\"charNumber\");",
+									"",
+									"randomList = randomList.sort(function (a, b) {  return a - b;  });",
+									"",
+									"randomList = randomList.sort((a, b) => a - b);",
+									"",
+									"console.log(randomList);",
+									"",
+									"var jsonData = pm.response.json();",
+									"",
+									"eval(pm.environment.get(\"commonTests\"))();",
+									"",
+									"pm.test(\"Response should be an array\", function () {",
+									"        pm.expect(jsonData).to.be.an('array');",
+									"});",
+									"",
+									"pm.test(\"Response should include requested characters\", function () {",
+									"        for(var i=0; i < charNumber; i++){",
+									"            pm.expect(jsonData[i].id).to.equals(randomList[i]);",
+									"        }",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": "let maxCharacterCount = pm.environment.get(\"maxCharacterCount\");\n\nlet charNumber = 3;\n\npm.environment.set(\"charNumber\", charNumber);\n\nlet utils = eval(pm.environment.get(\"utils\"))();\n\nrandomList = [];\n\nfor(var i=0; i < charNumber; i++){\n    let iteration = utils.myFunctions.genRandNumBetween(1,maxCharacterCount);\n    randomList.push(iteration);\n    console.log(iteration);\n}\n\npm.environment.set(\"randomList\", randomList);",
+					"tests": "let randomList = pm.environment.get(\"randomList\");\n\nlet charNumber = pm.environment.get(\"charNumber\");\n\nrandomList = randomList.sort(function (a, b) {  return a - b;  });\n\nrandomList = randomList.sort((a, b) => a - b);\n\nconsole.log(randomList);\n\nvar jsonData = pm.response.json();\n\neval(pm.environment.get(\"commonTests\"))();\n\npm.test(\"Response should be an array\", function () {\n        pm.expect(jsonData).to.be.an('array');\n});\n\npm.test(\"Response should include requested characters\", function () {\n        for(var i=0; i < charNumber; i++){\n            pm.expect(jsonData[i].id).to.equals(randomList[i]);\n        }\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {
+						"list": "{{randomList}}"
+					}
+				},
+				{
+					"id": "53f1505b-8122-4cae-b451-c3414b58855f",
+					"name": "Try to send POST request",
+					"url": "https://rickandmortyapi.com/api/",
+					"description": "",
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": [],
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8aa5eb4e-79b5-476d-ab10-63d0dd5a4da9",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status code should be 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});",
+									"",
+									"pm.test(\"Payload should be JSON formatted\", function () { ",
+									"        pm.response.to.be.json;",
+									"    });",
+									"    ",
+									"pm.test(\"Payload should have a body\", function () { ",
+									"        pm.response.to.be.withBody;",
+									"    });",
+									"    ",
+									"pm.test(\"Content-Type should be present\", function () {",
+									"        pm.response.to.have.header(\"Content-Type\");",
+									"    });",
+									"    ",
+									"pm.test(\"Response should be an error message\", function () {",
+									"    pm.expect(jsonData.error).to.eql(\"There is nothing here.\");",
+									"});",
+									"",
+									"function clearAllVariables () {",
+									"    const clean = _.keys(pm.environment.toObject());",
+									"    _.forEach(clean, () => {",
+									"        pm.environment.unset();",
+									"    });",
+									"}",
+									"",
+									"clearAllVariables();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\npm.test(\"Status code should be 404\", function () {\n    pm.response.to.have.status(404);\n});\n\npm.test(\"Payload should be JSON formatted\", function () { \n        pm.response.to.be.json;\n    });\n    \npm.test(\"Payload should have a body\", function () { \n        pm.response.to.be.withBody;\n    });\n    \npm.test(\"Content-Type should be present\", function () {\n        pm.response.to.have.header(\"Content-Type\");\n    });\n    \npm.test(\"Response should be an error message\", function () {\n    pm.expect(jsonData.error).to.eql(\"There is nothing here.\");\n});\n\nfunction clearAllVariables () {\n    const clean = _.keys(pm.environment.toObject());\n    _.forEach(clean, () => {\n        pm.environment.unset();\n    });\n}\n\nclearAllVariables();",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"rawModeData": "{\n\t\"characters\": \"https://rickandmortyapi.com/api/character\"\n}",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "54d5dad0-90fc-4f2a-9ed4-f9e6861d06ed",
+					"name": "Get valid filtered locations by page",
+					"url": "https://rickandmortyapi.com/api/location/?type=planet&dimension=dimension&page=2",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "type",
+							"value": "planet",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "dimension",
+							"value": "dimension",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "page",
+							"value": "2",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e79ff480-9007-4cb6-b5c6-b7d23c19d5a8",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"eval(pm.environment.get(\"commonTests\"))();",
+									"",
+									"eval(pm.environment.get(\"responseContains\"))();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\neval(pm.environment.get(\"commonTests\"))();\n\neval(pm.environment.get(\"responseContains\"))();",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "562fa9bd-0cc0-4b98-be56-aaf3a79b9cec",
+					"name": "Get random valid location",
+					"url": "https://rickandmortyapi.com/api/location/:randomLocationId",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [
+						{
+							"key": "randomLocationId",
+							"value": "{{randomLocationId}}"
+						}
+					],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4f87e671-a99a-499e-a66d-e9ce17a15f6c",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"let randomLocationId = pm.environment.get(\"randomLocationId\");",
+									"",
+									"eval(pm.environment.get(\"commonTests\"))();",
+									"",
+									"pm.test(\"Response should be an array\", function () {",
+									"        pm.expect(jsonData).to.be.an('object');",
+									"});",
+									"",
+									"pm.test(\"Response should include requested location\", function () {",
+									"        pm.expect(jsonData.id).to.equals(randomLocationId);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "d2dc434b-3ff8-4c92-b168-8b67cac0cc0c",
+								"exec": [
+									"let maxLocationCount = pm.environment.get(\"maxLocationCount\");",
+									"",
+									"let utils = eval(pm.environment.get(\"utils\"))();",
+									"",
+									"let randomLocationId = utils.myFunctions.genRandNumBetween(1,maxLocationCount);",
+									"",
+									"pm.environment.set(\"randomLocationId\", randomLocationId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": "let maxLocationCount = pm.environment.get(\"maxLocationCount\");\n\nlet utils = eval(pm.environment.get(\"utils\"))();\n\nlet randomLocationId = utils.myFunctions.genRandNumBetween(1,maxLocationCount);\n\npm.environment.set(\"randomLocationId\", randomLocationId);",
+					"tests": "var jsonData = pm.response.json();\n\nlet randomLocationId = pm.environment.get(\"randomLocationId\");\n\neval(pm.environment.get(\"commonTests\"))();\n\npm.test(\"Response should be an array\", function () {\n        pm.expect(jsonData).to.be.an('object');\n});\n\npm.test(\"Response should include requested location\", function () {\n        pm.expect(jsonData.id).to.equals(randomLocationId);\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {
+						"randomLocationId": "{{randomLocationId}}"
+					}
+				},
+				{
+					"id": "6360fcea-d6eb-4c9d-9ada-78d427f7c61e",
+					"name": "Get valid filtered locations by type and dimension",
+					"url": "https://rickandmortyapi.com/api/location/?type=planet&dimension=unknown",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "type",
+							"value": "planet",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "dimension",
+							"value": "unknown",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b57243a0-5767-4eb5-9fdf-b8f9af14f51b",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"eval(pm.environment.get(\"commonTests\"))();",
+									"",
+									"eval(pm.environment.get(\"responseContains\"))();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\neval(pm.environment.get(\"commonTests\"))();\n\neval(pm.environment.get(\"responseContains\"))();",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "69294f04-d178-4abc-b696-d5114ea25f22",
+					"name": "Get invalid character id",
+					"url": "https://rickandmortyapi.com/api/character/:invalidCharId",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [
+						{
+							"key": "invalidCharId",
+							"value": "{{invalidCharId}}"
+						}
+					],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "3c4eb95d-6fab-4e89-921c-cd135744ff23",
+								"exec": [
+									"let maxCharacterCount = pm.environment.get(\"maxCharacterCount\");",
+									"",
+									"let utils = eval(pm.environment.get(\"utils\"))();",
+									"",
+									"let invalidCharId = utils.myFunctions.genRandNumBetween(maxCharacterCount + 1 , maxCharacterCount + 1000);",
+									"",
+									"pm.environment.set(\"invalidCharId\", invalidCharId);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f728885f-e931-4592-be96-e409910c9bc4",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status code should be 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});",
+									"",
+									"pm.test(\"Payload should be JSON formatted\", function () { ",
+									"        pm.response.to.be.json;",
+									"    });",
+									"    ",
+									"pm.test(\"Payload should have a body\", function () { ",
+									"        pm.response.to.be.withBody;",
+									"    });",
+									"    ",
+									"pm.test(\"Content-Type should be present\", function () {",
+									"        pm.response.to.have.header(\"Content-Type\");",
+									"    });",
+									"    ",
+									"pm.test(\"Response should be an error message\", function () {",
+									"    pm.expect(jsonData.error).to.eql(\"Character not found\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": "let maxCharacterCount = pm.environment.get(\"maxCharacterCount\");\n\nlet utils = eval(pm.environment.get(\"utils\"))();\n\nlet invalidCharId = utils.myFunctions.genRandNumBetween(maxCharacterCount + 1 , maxCharacterCount + 1000);\n\npm.environment.set(\"invalidCharId\", invalidCharId);",
+					"tests": "var jsonData = pm.response.json();\n\npm.test(\"Status code should be 404\", function () {\n    pm.response.to.have.status(404);\n});\n\npm.test(\"Payload should be JSON formatted\", function () { \n        pm.response.to.be.json;\n    });\n    \npm.test(\"Payload should have a body\", function () { \n        pm.response.to.be.withBody;\n    });\n    \npm.test(\"Content-Type should be present\", function () {\n        pm.response.to.have.header(\"Content-Type\");\n    });\n    \npm.test(\"Response should be an error message\", function () {\n    pm.expect(jsonData.error).to.eql(\"Character not found\");\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {
+						"invalidCharId": "{{invalidCharId}}"
+					}
+				},
+				{
+					"id": "69a147e6-7485-4a14-a7b3-0e0356f49221",
+					"name": "Get valid filtered episodes by page",
+					"url": "https://rickandmortyapi.com/api/location/?episode=S03&page=2",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "episode",
+							"value": "S03",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "page",
+							"value": "2",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e79ff480-9007-4cb6-b5c6-b7d23c19d5a8",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"eval(pm.environment.get(\"commonTests\"))();",
+									"",
+									"eval(pm.environment.get(\"responseContains\"))();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\neval(pm.environment.get(\"commonTests\"))();\n\neval(pm.environment.get(\"responseContains\"))();",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "6a9519dc-350b-40fd-9cf6-c66a55fb4019",
+					"name": "Get character invalid page number",
+					"url": "https://rickandmortyapi.com/api/character/?name=rick&status=alive&page=10",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "name",
+							"value": "rick",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "status",
+							"value": "alive",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "page",
+							"value": "10",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "721e3669-cd7e-49d7-b74d-0de1dc3f758a",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"eval(pm.environment.get(\"notFoundTests\"))();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\neval(pm.environment.get(\"notFoundTests\"))();",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "6d908aba-aae2-4fe5-8a00-ee576bb82a30",
+					"name": "Get character with invalid value",
+					"url": "https://rickandmortyapi.com/api/character/rick",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1928305d-e27e-4cb2-9ce3-c7952eaedd5d",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status code should be 500\", function () {",
+									"    pm.response.to.have.status(500);",
+									"});",
+									"",
+									"pm.test(\"Payload should be JSON formatted\", function () { ",
+									"        pm.response.to.be.json;",
+									"    });",
+									"    ",
+									"pm.test(\"Payload should have a body\", function () { ",
+									"        pm.response.to.be.withBody;",
+									"    });",
+									"    ",
+									"pm.test(\"Content-Type should be present\", function () {",
+									"        pm.response.to.have.header(\"Content-Type\");",
+									"    });",
+									"    ",
+									"pm.test(\"Response should be an error message\", function () {",
+									"    pm.expect(jsonData.error).to.eql(\"Hey! you must provide an id\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\npm.test(\"Status code should be 500\", function () {\n    pm.response.to.have.status(500);\n});\n\npm.test(\"Payload should be JSON formatted\", function () { \n        pm.response.to.be.json;\n    });\n    \npm.test(\"Payload should have a body\", function () { \n        pm.response.to.be.withBody;\n    });\n    \npm.test(\"Content-Type should be present\", function () {\n        pm.response.to.have.header(\"Content-Type\");\n    });\n    \npm.test(\"Response should be an error message\", function () {\n    pm.expect(jsonData.error).to.eql(\"Hey! you must provide an id\");\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "78c17005-8f6c-4b12-82b3-d4bfce0716f5",
+					"name": "Get invalid character list",
+					"url": "https://rickandmortyapi.com/api/character/:list",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [
+						{
+							"key": "list",
+							"value": "{{invalidList}}"
+						}
+					],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "3c4eb95d-6fab-4e89-921c-cd135744ff23",
+								"exec": [
+									"let maxCharacterCount = pm.environment.get(\"maxCharacterCount\");",
+									"",
+									"let charNumber = 3;",
+									"",
+									"let utils = eval(pm.environment.get(\"utils\"))();",
+									"",
+									"invalidList = [];",
+									"",
+									"for(var i=0; i < charNumber; i++){",
+									"    let iteration = utils.myFunctions.genRandNumBetween(maxCharacterCount + 1 , maxCharacterCount + 1000);",
+									"    invalidList.push(iteration);",
+									"    console.log(iteration);",
+									"}",
+									"",
+									"pm.environment.set(\"invalidList\", invalidList);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f728885f-e931-4592-be96-e409910c9bc4",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status code should be 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Payload should be JSON formatted\", function () { ",
+									"        pm.response.to.be.json;",
+									"    });",
+									"    ",
+									"pm.test(\"Payload should have a body\", function () { ",
+									"        pm.response.to.be.withBody;",
+									"    });",
+									"    ",
+									"pm.test(\"Content-Type should be present\", function () {",
+									"        pm.response.to.have.header(\"Content-Type\");",
+									"    });",
+									"    ",
+									"pm.test(\"Response should be en empty array\", function () {",
+									"    pm.expect(jsonData).to.be.an('array').that.is.empty;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": "let maxCharacterCount = pm.environment.get(\"maxCharacterCount\");\n\nlet charNumber = 3;\n\nlet utils = eval(pm.environment.get(\"utils\"))();\n\ninvalidList = [];\n\nfor(var i=0; i < charNumber; i++){\n    let iteration = utils.myFunctions.genRandNumBetween(maxCharacterCount + 1 , maxCharacterCount + 1000);\n    invalidList.push(iteration);\n    console.log(iteration);\n}\n\npm.environment.set(\"invalidList\", invalidList);",
+					"tests": "var jsonData = pm.response.json();\n\npm.test(\"Status code should be 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Payload should be JSON formatted\", function () { \n        pm.response.to.be.json;\n    });\n    \npm.test(\"Payload should have a body\", function () { \n        pm.response.to.be.withBody;\n    });\n    \npm.test(\"Content-Type should be present\", function () {\n        pm.response.to.have.header(\"Content-Type\");\n    });\n    \npm.test(\"Response should be en empty array\", function () {\n    pm.expect(jsonData).to.be.an('array').that.is.empty;\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {
+						"list": "{{invalidList}}"
+					}
+				},
+				{
+					"id": "7ff6f6ba-8b8e-4a42-ad84-6127332afc71",
+					"name": "Get valid filtered locations by all criteria",
+					"url": "https://rickandmortyapi.com/api/location/?type=planet&dimension=post-apocalyptic dimension&name=post-apocalyptic earth",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "type",
+							"value": "planet",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "dimension",
+							"value": "post-apocalyptic dimension",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "name",
+							"value": "post-apocalyptic earth",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b57243a0-5767-4eb5-9fdf-b8f9af14f51b",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"eval(pm.environment.get(\"commonTests\"))();",
+									"",
+									"eval(pm.environment.get(\"responseContains\"))();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\neval(pm.environment.get(\"commonTests\"))();\n\neval(pm.environment.get(\"responseContains\"))();",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "8514da50-50ac-451a-bf00-fa3cec7b21af",
+					"name": "Get invalid location id",
+					"url": "https://rickandmortyapi.com/api/location/:invalidLocationId",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [
+						{
+							"key": "invalidLocationId",
+							"value": "{{invalidLocationId}}"
+						}
+					],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "3c4eb95d-6fab-4e89-921c-cd135744ff23",
+								"exec": [
+									"let maxLocationCount = pm.environment.get(\"maxLocationCount\");",
+									"",
+									"let utils = eval(pm.environment.get(\"utils\"))();",
+									"",
+									"let invalidLocationId = utils.myFunctions.genRandNumBetween(maxLocationCount + 1 , maxLocationCount + 1000);",
+									"",
+									"pm.environment.set(\"invalidLocationId\", invalidLocationId);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f728885f-e931-4592-be96-e409910c9bc4",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status code should be 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});",
+									"",
+									"pm.test(\"Payload should be JSON formatted\", function () { ",
+									"        pm.response.to.be.json;",
+									"    });",
+									"    ",
+									"pm.test(\"Payload should have a body\", function () { ",
+									"        pm.response.to.be.withBody;",
+									"    });",
+									"    ",
+									"pm.test(\"Content-Type should be present\", function () {",
+									"        pm.response.to.have.header(\"Content-Type\");",
+									"    });",
+									"    ",
+									"pm.test(\"Response should be an error message\", function () {",
+									"    pm.expect(jsonData.error).to.eql(\"Location not found\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": "let maxLocationCount = pm.environment.get(\"maxLocationCount\");\n\nlet utils = eval(pm.environment.get(\"utils\"))();\n\nlet invalidLocationId = utils.myFunctions.genRandNumBetween(maxLocationCount + 1 , maxLocationCount + 1000);\n\npm.environment.set(\"invalidLocationId\", invalidLocationId);",
+					"tests": "var jsonData = pm.response.json();\n\npm.test(\"Status code should be 404\", function () {\n    pm.response.to.have.status(404);\n});\n\npm.test(\"Payload should be JSON formatted\", function () { \n        pm.response.to.be.json;\n    });\n    \npm.test(\"Payload should have a body\", function () { \n        pm.response.to.be.withBody;\n    });\n    \npm.test(\"Content-Type should be present\", function () {\n        pm.response.to.have.header(\"Content-Type\");\n    });\n    \npm.test(\"Response should be an error message\", function () {\n    pm.expect(jsonData.error).to.eql(\"Location not found\");\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {
+						"invalidLocationId": "{{invalidLocationId}}"
+					}
+				},
+				{
+					"id": "9b9b6697-b92b-4c94-96f0-ba92fa9e0504",
+					"name": "Get valid filtered episodes by name and episode",
+					"url": "https://rickandmortyapi.com/api/episode/?name=rick&episode=S03",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "name",
+							"value": "rick",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "episode",
+							"value": "S03",
+							"equals": false,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b57243a0-5767-4eb5-9fdf-b8f9af14f51b",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"eval(pm.environment.get(\"commonTests\"))();",
+									"",
+									"eval(pm.environment.get(\"responseContains\"))();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\neval(pm.environment.get(\"commonTests\"))();\n\neval(pm.environment.get(\"responseContains\"))();",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "9c08bda7-d2f9-44ac-9c6a-da2d6ccc8182",
+					"name": "Get all characters",
+					"url": "https://rickandmortyapi.com/api/character/",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": null,
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a86bd682-9463-4cc7-be1e-b3543cd14056",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.environment.set(\"maxCharacterPages\", jsonData.info.pages);",
+									"",
+									"pm.environment.set(\"maxCharacterCount\", jsonData.info.count);",
+									"",
+									"eval(pm.environment.get(\"commonTests\"))();",
+									"",
+									"eval(pm.environment.get(\"responseContains\"))();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ba624d81-2088-4f51-967e-335195c1d874",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\npm.environment.set(\"maxCharacterPages\", jsonData.info.pages);\n\npm.environment.set(\"maxCharacterCount\", jsonData.info.count);\n\neval(pm.environment.get(\"commonTests\"))();\n\neval(pm.environment.get(\"responseContains\"))();",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"pathVariables": {}
+				},
+				{
+					"id": "a52c214b-71a0-4257-928a-0bc3590575cc",
+					"name": "Get random valid character page",
+					"url": "https://rickandmortyapi.com/api/character/?page={{randomPage}}",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "page",
+							"value": "{{randomPage}}",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4f87e671-a99a-499e-a66d-e9ce17a15f6c",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"eval(pm.environment.get(\"commonTests\"))();",
+									"",
+									"eval(pm.environment.get(\"responseContains\"))();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "d2dc434b-3ff8-4c92-b168-8b67cac0cc0c",
+								"exec": [
+									"let maxCharacterPages = pm.environment.get(\"maxCharacterPages\");",
+									"",
+									"let utils = eval(pm.environment.get(\"utils\"))();",
+									"",
+									"let randomPage = utils.myFunctions.genRandNumBetween(1,maxCharacterPages);",
+									"",
+									"pm.environment.set(\"randomPage\", randomPage);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": "let maxCharacterPages = pm.environment.get(\"maxCharacterPages\");\n\nlet utils = eval(pm.environment.get(\"utils\"))();\n\nlet randomPage = utils.myFunctions.genRandNumBetween(1,maxCharacterPages);\n\npm.environment.set(\"randomPage\", randomPage);",
+					"tests": "var jsonData = pm.response.json();\n\neval(pm.environment.get(\"commonTests\"))();\n\neval(pm.environment.get(\"responseContains\"))();",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "a6f19488-3d94-4aaf-9d3e-ab7a6120b068",
+					"name": "Get invalid episode id",
+					"url": "https://rickandmortyapi.com/api/episode/:invalideEpisodeId",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [
+						{
+							"key": "invalideEpisodeId",
+							"value": "{{invalideEpisodeId}}"
+						}
+					],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "3c4eb95d-6fab-4e89-921c-cd135744ff23",
+								"exec": [
+									"let maxEpisodeCount = pm.environment.get(\"maxEpisodeCount\");",
+									"",
+									"let utils = eval(pm.environment.get(\"utils\"))();",
+									"",
+									"let invalideEpisodeId = utils.myFunctions.genRandNumBetween(maxEpisodeCount + 1 , maxEpisodeCount + 1000);",
+									"",
+									"pm.environment.set(\"invalideEpisodeId\", invalideEpisodeId);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f728885f-e931-4592-be96-e409910c9bc4",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status code should be 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});",
+									"",
+									"pm.test(\"Payload should be JSON formatted\", function () { ",
+									"        pm.response.to.be.json;",
+									"    });",
+									"    ",
+									"pm.test(\"Payload should have a body\", function () { ",
+									"        pm.response.to.be.withBody;",
+									"    });",
+									"    ",
+									"pm.test(\"Content-Type should be present\", function () {",
+									"        pm.response.to.have.header(\"Content-Type\");",
+									"    });",
+									"    ",
+									"pm.test(\"Response should be an error message\", function () {",
+									"    pm.expect(jsonData.error).to.eql(\"Episode not found\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": "let maxEpisodeCount = pm.environment.get(\"maxEpisodeCount\");\n\nlet utils = eval(pm.environment.get(\"utils\"))();\n\nlet invalideEpisodeId = utils.myFunctions.genRandNumBetween(maxEpisodeCount + 1 , maxEpisodeCount + 1000);\n\npm.environment.set(\"invalideEpisodeId\", invalideEpisodeId);",
+					"tests": "var jsonData = pm.response.json();\n\npm.test(\"Status code should be 404\", function () {\n    pm.response.to.have.status(404);\n});\n\npm.test(\"Payload should be JSON formatted\", function () { \n        pm.response.to.be.json;\n    });\n    \npm.test(\"Payload should have a body\", function () { \n        pm.response.to.be.withBody;\n    });\n    \npm.test(\"Content-Type should be present\", function () {\n        pm.response.to.have.header(\"Content-Type\");\n    });\n    \npm.test(\"Response should be an error message\", function () {\n    pm.expect(jsonData.error).to.eql(\"Episode not found\");\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {
+						"invalideEpisodeId": "{{invalideEpisodeId}}"
+					}
+				},
+				{
+					"id": "aafa5f46-1b77-48c7-8f0d-cae0b1113ac5",
+					"name": "Get location with invalid value",
+					"url": "https://rickandmortyapi.com/api/location/earth",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1928305d-e27e-4cb2-9ce3-c7952eaedd5d",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status code should be 500\", function () {",
+									"    pm.response.to.have.status(500);",
+									"});",
+									"",
+									"pm.test(\"Payload should be JSON formatted\", function () { ",
+									"        pm.response.to.be.json;",
+									"    });",
+									"    ",
+									"pm.test(\"Payload should have a body\", function () { ",
+									"        pm.response.to.be.withBody;",
+									"    });",
+									"    ",
+									"pm.test(\"Content-Type should be present\", function () {",
+									"        pm.response.to.have.header(\"Content-Type\");",
+									"    });",
+									"    ",
+									"pm.test(\"Response should be an error message\", function () {",
+									"    pm.expect(jsonData.error).to.eql(\"Hey! you must provide an id\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\npm.test(\"Status code should be 500\", function () {\n    pm.response.to.have.status(500);\n});\n\npm.test(\"Payload should be JSON formatted\", function () { \n        pm.response.to.be.json;\n    });\n    \npm.test(\"Payload should have a body\", function () { \n        pm.response.to.be.withBody;\n    });\n    \npm.test(\"Content-Type should be present\", function () {\n        pm.response.to.have.header(\"Content-Type\");\n    });\n    \npm.test(\"Response should be an error message\", function () {\n    pm.expect(jsonData.error).to.eql(\"Hey! you must provide an id\");\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "ae72f731-d2a0-4409-89a7-e2ab0bb8e7b1",
+					"name": "Get valid filtered episodes by name",
+					"url": "https://rickandmortyapi.com/api/episode/?name=rick",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "name",
+							"value": "rick",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b57243a0-5767-4eb5-9fdf-b8f9af14f51b",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"eval(pm.environment.get(\"commonTests\"))();",
+									"",
+									"eval(pm.environment.get(\"responseContains\"))();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\neval(pm.environment.get(\"commonTests\"))();\n\neval(pm.environment.get(\"responseContains\"))();",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "cb140454-53f8-49b6-ab70-af0b6e235949",
+					"name": "Get location invalid page number",
+					"url": "https://rickandmortyapi.com/api/location/?name=earth&type=planet&page=10",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "name",
+							"value": "earth",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "type",
+							"value": "planet",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "page",
+							"value": "10",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "721e3669-cd7e-49d7-b74d-0de1dc3f758a",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"eval(pm.environment.get(\"notFoundTests\"))();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\neval(pm.environment.get(\"notFoundTests\"))();",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "d225860a-e597-4e77-aa39-52fd212db914",
+					"name": "Get all episodes",
+					"url": "https://rickandmortyapi.com/api/episode/",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": null,
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a86bd682-9463-4cc7-be1e-b3543cd14056",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.environment.set(\"maxEpisodePages\", jsonData.info.pages);",
+									"pm.environment.set(\"maxEpisodeCount\", jsonData.info.count);",
+									"",
+									"eval(pm.environment.get(\"commonTests\"))();",
+									"",
+									"eval(pm.environment.get(\"responseContains\"))();",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ba624d81-2088-4f51-967e-335195c1d874",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\npm.environment.set(\"maxEpisodePages\", jsonData.info.pages);\npm.environment.set(\"maxEpisodeCount\", jsonData.info.count);\n\neval(pm.environment.get(\"commonTests\"))();\n\neval(pm.environment.get(\"responseContains\"))();\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"pathVariables": {}
+				},
+				{
+					"id": "d49946bf-8f09-4368-b076-fd41ba386d28",
+					"name": "Get random valid episode",
+					"url": "https://rickandmortyapi.com/api/episode/:randomEpisodeId",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [
+						{
+							"key": "randomEpisodeId",
+							"value": "{{randomEpisodeId}}"
+						}
+					],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4f87e671-a99a-499e-a66d-e9ce17a15f6c",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"let randomEpisodeId = pm.environment.get(\"randomEpisodeId\");",
+									"",
+									"eval(pm.environment.get(\"commonTests\"))();",
+									"",
+									"pm.test(\"Response should be an array\", function () {",
+									"        pm.expect(jsonData).to.be.an('object');",
+									"});",
+									"",
+									"pm.test(\"Response should include requested episode\", function () {",
+									"        pm.expect(jsonData.id).to.equals(randomEpisodeId);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "d2dc434b-3ff8-4c92-b168-8b67cac0cc0c",
+								"exec": [
+									"let maxEpisodeCount = pm.environment.get(\"maxEpisodeCount\");",
+									"",
+									"let utils = eval(pm.environment.get(\"utils\"))();",
+									"",
+									"let randomEpisodeId = utils.myFunctions.genRandNumBetween(1, maxEpisodeCount);",
+									"",
+									"pm.environment.set(\"randomEpisodeId\", randomEpisodeId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": "let maxEpisodeCount = pm.environment.get(\"maxEpisodeCount\");\n\nlet utils = eval(pm.environment.get(\"utils\"))();\n\nlet randomEpisodeId = utils.myFunctions.genRandNumBetween(1, maxEpisodeCount);\n\npm.environment.set(\"randomEpisodeId\", randomEpisodeId);",
+					"tests": "var jsonData = pm.response.json();\n\nlet randomEpisodeId = pm.environment.get(\"randomEpisodeId\");\n\neval(pm.environment.get(\"commonTests\"))();\n\npm.test(\"Response should be an array\", function () {\n        pm.expect(jsonData).to.be.an('object');\n});\n\npm.test(\"Response should include requested episode\", function () {\n        pm.expect(jsonData.id).to.equals(randomEpisodeId);\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {
+						"randomEpisodeId": "{{randomEpisodeId}}"
+					}
+				},
+				{
+					"id": "d51826a2-3f12-498a-a70f-5b1f2e08e2f5",
+					"name": "Get episode with invalid value",
+					"url": "https://rickandmortyapi.com/api/episode/earth",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1928305d-e27e-4cb2-9ce3-c7952eaedd5d",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status code should be 500\", function () {",
+									"    pm.response.to.have.status(500);",
+									"});",
+									"",
+									"pm.test(\"Payload should be JSON formatted\", function () { ",
+									"        pm.response.to.be.json;",
+									"    });",
+									"    ",
+									"pm.test(\"Payload should have a body\", function () { ",
+									"        pm.response.to.be.withBody;",
+									"    });",
+									"    ",
+									"pm.test(\"Content-Type should be present\", function () {",
+									"        pm.response.to.have.header(\"Content-Type\");",
+									"    });",
+									"    ",
+									"pm.test(\"Response should be an error message\", function () {",
+									"    pm.expect(jsonData.error).to.eql(\"Hey! you must provide an id\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\npm.test(\"Status code should be 500\", function () {\n    pm.response.to.have.status(500);\n});\n\npm.test(\"Payload should be JSON formatted\", function () { \n        pm.response.to.be.json;\n    });\n    \npm.test(\"Payload should have a body\", function () { \n        pm.response.to.be.withBody;\n    });\n    \npm.test(\"Content-Type should be present\", function () {\n        pm.response.to.have.header(\"Content-Type\");\n    });\n    \npm.test(\"Response should be an error message\", function () {\n    pm.expect(jsonData.error).to.eql(\"Hey! you must provide an id\");\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "d93cead1-5668-48f4-9017-b1e262ce7285",
+					"name": "Get all locations",
+					"url": "https://rickandmortyapi.com/api/location/",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": null,
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a86bd682-9463-4cc7-be1e-b3543cd14056",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.environment.set(\"maxLocationPages\", jsonData.info.pages);",
+									"",
+									"pm.environment.set(\"maxLocationCount\", jsonData.info.count);",
+									"",
+									"eval(pm.environment.get(\"commonTests\"))();",
+									"",
+									"eval(pm.environment.get(\"responseContains\"))();",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ba624d81-2088-4f51-967e-335195c1d874",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\npm.environment.set(\"maxLocationPages\", jsonData.info.pages);\n\npm.environment.set(\"maxLocationCount\", jsonData.info.count);\n\neval(pm.environment.get(\"commonTests\"))();\n\neval(pm.environment.get(\"responseContains\"))();\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"pathVariables": {}
+				},
+				{
+					"id": "ea4075d6-f6bd-4362-817c-6cfd96b90473",
+					"name": "Get API",
+					"url": "https://rickandmortyapi.com/api/",
+					"description": "",
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": null,
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a4a9309c-2387-4790-a64c-d9fedb1f8b48",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"eval(pm.environment.get(\"commonTests\"))();",
+									"",
+									"pm.test(\"Body response should returns right values\", function () {",
+									"    pm.expect(jsonData.characters).to.eql(\"https://rickandmortyapi.com/api/character\");",
+									"    pm.expect(jsonData.locations).to.eql(\"https://rickandmortyapi.com/api/location\");",
+									"    pm.expect(jsonData.episodes).to.eql(\"https://rickandmortyapi.com/api/episode\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "02445ef7-b74e-4106-b593-36402669ed31",
+								"exec": [
+									"var commonTests = () => {",
+									"    pm.test(\"Status code should be 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									"    ",
+									"    pm.test(\"Payload should be JSON formatted\", function () { ",
+									"        pm.response.to.be.json;",
+									"    });",
+									"    ",
+									"    pm.test(\"Payload should have a body\", function () { ",
+									"        pm.response.to.be.withBody;",
+									"    });",
+									"    ",
+									"    pm.test(\"Content-Type should be present\", function () {",
+									"        pm.response.to.have.header(\"Content-Type\");",
+									"    });",
+									"};",
+									"",
+									"pm.environment.set(\"commonTests\", commonTests.toString());",
+									"",
+									"var notFoundTests = () => {",
+									"    pm.test(\"Status code should be 404\", function () {",
+									"        pm.response.to.have.status(404);",
+									"    });",
+									"",
+									"    pm.test(\"Payload should be JSON formatted\", function () { ",
+									"            pm.response.to.be.json;",
+									"        });",
+									"        ",
+									"    pm.test(\"Payload should have a body\", function () { ",
+									"            pm.response.to.be.withBody;",
+									"        });",
+									"        ",
+									"    pm.test(\"Content-Type should be present\", function () {",
+									"            pm.response.to.have.header(\"Content-Type\");",
+									"        });",
+									"        ",
+									"    pm.test(\"Response should be an error message\", function () {",
+									"        pm.expect(jsonData.error).to.eql(\"There is nothing here\");",
+									"    });",
+									"};",
+									"",
+									"pm.environment.set(\"notFoundTests\", notFoundTests.toString());",
+									"",
+									"var responseContains = () => {",
+									"        pm.test(\"Response should be an object\", function () {",
+									"        pm.expect(jsonData).to.be.an('object').that.has.all.keys('info', 'results');",
+									"    });",
+									"};",
+									"",
+									"pm.environment.set(\"responseContains\", responseContains.toString());",
+									"",
+									"var utils = () => {",
+									"    var genRandNumBetween = (min, max) => {",
+									"        return Math.floor(Math.random() * (max - min + 1) + min);",
+									"    };",
+									"    return {",
+									"        myFunctions: {",
+									"            genRandNumBetween",
+									"        }",
+									"    };",
+									"};",
+									"",
+									"pm.environment.set(\"utils\", utils.toString());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"preRequestScript": "var commonTests = () => {\n    pm.test(\"Status code should be 200\", function () {\n        pm.response.to.have.status(200);\n    });\n    \n    pm.test(\"Payload should be JSON formatted\", function () { \n        pm.response.to.be.json;\n    });\n    \n    pm.test(\"Payload should have a body\", function () { \n        pm.response.to.be.withBody;\n    });\n    \n    pm.test(\"Content-Type should be present\", function () {\n        pm.response.to.have.header(\"Content-Type\");\n    });\n};\n\npm.environment.set(\"commonTests\", commonTests.toString());\n\nvar notFoundTests = () => {\n    pm.test(\"Status code should be 404\", function () {\n        pm.response.to.have.status(404);\n    });\n\n    pm.test(\"Payload should be JSON formatted\", function () { \n            pm.response.to.be.json;\n        });\n        \n    pm.test(\"Payload should have a body\", function () { \n            pm.response.to.be.withBody;\n        });\n        \n    pm.test(\"Content-Type should be present\", function () {\n            pm.response.to.have.header(\"Content-Type\");\n        });\n        \n    pm.test(\"Response should be an error message\", function () {\n        pm.expect(jsonData.error).to.eql(\"There is nothing here\");\n    });\n};\n\npm.environment.set(\"notFoundTests\", notFoundTests.toString());\n\nvar responseContains = () => {\n        pm.test(\"Response should be an object\", function () {\n        pm.expect(jsonData).to.be.an('object').that.has.all.keys('info', 'results');\n    });\n};\n\npm.environment.set(\"responseContains\", responseContains.toString());\n\nvar utils = () => {\n    var genRandNumBetween = (min, max) => {\n        return Math.floor(Math.random() * (max - min + 1) + min);\n    };\n    return {\n        myFunctions: {\n            genRandNumBetween\n        }\n    };\n};\n\npm.environment.set(\"utils\", utils.toString());",
+					"tests": "var jsonData = pm.response.json();\n\neval(pm.environment.get(\"commonTests\"))();\n\npm.test(\"Body response should returns right values\", function () {\n    pm.expect(jsonData.characters).to.eql(\"https://rickandmortyapi.com/api/character\");\n    pm.expect(jsonData.locations).to.eql(\"https://rickandmortyapi.com/api/location\");\n    pm.expect(jsonData.episodes).to.eql(\"https://rickandmortyapi.com/api/episode\");\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"rawModeData": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "ee94e8fc-3533-4689-a3bd-4a470f0a1fe5",
+					"name": "Get characters with invalid values",
+					"url": "https://rickandmortyapi.com/api/character/rick, morty",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1928305d-e27e-4cb2-9ce3-c7952eaedd5d",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status code should be 500\", function () {",
+									"    pm.response.to.have.status(500);",
+									"});",
+									"",
+									"pm.test(\"Payload should be JSON formatted\", function () { ",
+									"        pm.response.to.be.json;",
+									"    });",
+									"    ",
+									"pm.test(\"Payload should have a body\", function () { ",
+									"        pm.response.to.be.withBody;",
+									"    });",
+									"    ",
+									"pm.test(\"Content-Type should be present\", function () {",
+									"        pm.response.to.have.header(\"Content-Type\");",
+									"    });",
+									"    ",
+									"pm.test(\"Response should be an error message\", function () {",
+									"    pm.expect(jsonData.error).to.eql(\"Cast to number failed for value \\\"NaN\\\" at path \\\"id\\\" for model \\\"Character\\\"\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\npm.test(\"Status code should be 500\", function () {\n    pm.response.to.have.status(500);\n});\n\npm.test(\"Payload should be JSON formatted\", function () { \n        pm.response.to.be.json;\n    });\n    \npm.test(\"Payload should have a body\", function () { \n        pm.response.to.be.withBody;\n    });\n    \npm.test(\"Content-Type should be present\", function () {\n        pm.response.to.have.header(\"Content-Type\");\n    });\n    \npm.test(\"Response should be an error message\", function () {\n    pm.expect(jsonData.error).to.eql(\"Cast to number failed for value \\\"NaN\\\" at path \\\"id\\\" for model \\\"Character\\\"\");\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "f2111bc9-6b28-4f86-a388-6e0f851a0fc4",
+					"name": "Get random valid character",
+					"url": "https://rickandmortyapi.com/api/character/:randomCharacterId",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [
+						{
+							"key": "randomCharacterId",
+							"value": "{{randomCharacterId}}"
+						}
+					],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4f87e671-a99a-499e-a66d-e9ce17a15f6c",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"let randomCharacterId = pm.environment.get(\"randomCharacterId\");",
+									"",
+									"eval(pm.environment.get(\"commonTests\"))();",
+									"",
+									"pm.test(\"Response should be an array\", function () {",
+									"        pm.expect(jsonData).to.be.an('object');",
+									"});",
+									"",
+									"pm.test(\"Response should include requested character\", function () {",
+									"        pm.expect(jsonData.id).to.equals(randomCharacterId);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "d2dc434b-3ff8-4c92-b168-8b67cac0cc0c",
+								"exec": [
+									"let maxCharacterCount = pm.environment.get(\"maxCharacterCount\");",
+									"",
+									"let utils = eval(pm.environment.get(\"utils\"))();",
+									"",
+									"let randomCharacterId = utils.myFunctions.genRandNumBetween(1,maxCharacterCount);",
+									"",
+									"pm.environment.set(\"randomCharacterId\", randomCharacterId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": "let maxCharacterCount = pm.environment.get(\"maxCharacterCount\");\n\nlet utils = eval(pm.environment.get(\"utils\"))();\n\nlet randomCharacterId = utils.myFunctions.genRandNumBetween(1,maxCharacterCount);\n\npm.environment.set(\"randomCharacterId\", randomCharacterId);",
+					"tests": "var jsonData = pm.response.json();\n\nlet randomCharacterId = pm.environment.get(\"randomCharacterId\");\n\neval(pm.environment.get(\"commonTests\"))();\n\npm.test(\"Response should be an array\", function () {\n        pm.expect(jsonData).to.be.an('object');\n});\n\npm.test(\"Response should include requested character\", function () {\n        pm.expect(jsonData.id).to.equals(randomCharacterId);\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {
+						"randomCharacterId": "{{randomCharacterId}}"
+					}
+				},
+				{
+					"id": "f4225bf7-3a8b-4a00-9991-dda2ec6814bd",
+					"name": "Get invalid location list",
+					"url": "https://rickandmortyapi.com/api/location/:list",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [
+						{
+							"key": "list",
+							"value": "{{invalidList}}"
+						}
+					],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "3c4eb95d-6fab-4e89-921c-cd135744ff23",
+								"exec": [
+									"let maxLocationCount = pm.environment.get(\"maxLocationCount\");",
+									"",
+									"let charNumber = 3;",
+									"",
+									"let utils = eval(pm.environment.get(\"utils\"))();",
+									"",
+									"invalidList = [];",
+									"",
+									"for(var i=0; i < charNumber; i++){",
+									"    let iteration = utils.myFunctions.genRandNumBetween(maxLocationCount + 1 , maxLocationCount + 1000);",
+									"    invalidList.push(iteration);",
+									"    console.log(iteration);",
+									"}",
+									"",
+									"pm.environment.set(\"invalidList\", invalidList);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f728885f-e931-4592-be96-e409910c9bc4",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status code should be 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Payload should be JSON formatted\", function () { ",
+									"        pm.response.to.be.json;",
+									"    });",
+									"    ",
+									"pm.test(\"Payload should have a body\", function () { ",
+									"        pm.response.to.be.withBody;",
+									"    });",
+									"    ",
+									"pm.test(\"Content-Type should be present\", function () {",
+									"        pm.response.to.have.header(\"Content-Type\");",
+									"    });",
+									"    ",
+									"pm.test(\"Response should be en empty array\", function () {",
+									"    pm.expect(jsonData).to.be.an('array').that.is.empty;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": "let maxLocationCount = pm.environment.get(\"maxLocationCount\");\n\nlet charNumber = 3;\n\nlet utils = eval(pm.environment.get(\"utils\"))();\n\ninvalidList = [];\n\nfor(var i=0; i < charNumber; i++){\n    let iteration = utils.myFunctions.genRandNumBetween(maxLocationCount + 1 , maxLocationCount + 1000);\n    invalidList.push(iteration);\n    console.log(iteration);\n}\n\npm.environment.set(\"invalidList\", invalidList);",
+					"tests": "var jsonData = pm.response.json();\n\npm.test(\"Status code should be 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Payload should be JSON formatted\", function () { \n        pm.response.to.be.json;\n    });\n    \npm.test(\"Payload should have a body\", function () { \n        pm.response.to.be.withBody;\n    });\n    \npm.test(\"Content-Type should be present\", function () {\n        pm.response.to.have.header(\"Content-Type\");\n    });\n    \npm.test(\"Response should be en empty array\", function () {\n    pm.expect(jsonData).to.be.an('array').that.is.empty;\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {
+						"list": "{{invalidList}}"
+					}
+				},
+				{
+					"id": "f68b1c71-004b-4636-b290-6dfe6d60ac4e",
+					"name": "Get random valid multiple episodes",
+					"url": "https://rickandmortyapi.com/api/episode/:list",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [
+						{
+							"key": "list",
+							"value": "{{randomList}}"
+						}
+					],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "adf91de0-1fe1-4996-8130-aa5beddde3e8",
+								"exec": [
+									"let maxEpisodeCount = pm.environment.get(\"maxEpisodeCount\");",
+									"",
+									"let episodeNumber = 3;",
+									"",
+									"pm.environment.set(\"episodeNumber\", episodeNumber);",
+									"",
+									"let utils = eval(pm.environment.get(\"utils\"))();",
+									"",
+									"randomList = [];",
+									"",
+									"for(var i=0; i < episodeNumber; i++){",
+									"    let iteration = utils.myFunctions.genRandNumBetween(1, maxEpisodeCount);",
+									"    randomList.push(iteration);",
+									"    console.log(iteration);",
+									"}",
+									"",
+									"pm.environment.set(\"randomList\", randomList);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "783b89df-bacd-42b7-a05a-fa42c33892d1",
+								"exec": [
+									"let randomList = pm.environment.get(\"randomList\");",
+									"",
+									"let episodeNumber = pm.environment.get(\"episodeNumber\");",
+									"",
+									"randomList = randomList.sort(function (a, b) {  return a - b;  });",
+									"",
+									"randomList = randomList.sort((a, b) => a - b);",
+									"",
+									"console.log(randomList);",
+									"",
+									"var jsonData = pm.response.json();",
+									"",
+									"eval(pm.environment.get(\"commonTests\"))();",
+									"",
+									"pm.test(\"Response should be an array\", function () {",
+									"        pm.expect(jsonData).to.be.an('array');",
+									"});",
+									"",
+									"pm.test(\"Response should include requested episodes\", function () {",
+									"        for(var i=0; i < episodeNumber; i++){",
+									"            pm.expect(jsonData[i].id).to.equals(randomList[i]);",
+									"        }",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": "let maxEpisodeCount = pm.environment.get(\"maxEpisodeCount\");\n\nlet episodeNumber = 3;\n\npm.environment.set(\"episodeNumber\", episodeNumber);\n\nlet utils = eval(pm.environment.get(\"utils\"))();\n\nrandomList = [];\n\nfor(var i=0; i < episodeNumber; i++){\n    let iteration = utils.myFunctions.genRandNumBetween(1, maxEpisodeCount);\n    randomList.push(iteration);\n    console.log(iteration);\n}\n\npm.environment.set(\"randomList\", randomList);",
+					"tests": "let randomList = pm.environment.get(\"randomList\");\n\nlet episodeNumber = pm.environment.get(\"episodeNumber\");\n\nrandomList = randomList.sort(function (a, b) {  return a - b;  });\n\nrandomList = randomList.sort((a, b) => a - b);\n\nconsole.log(randomList);\n\nvar jsonData = pm.response.json();\n\neval(pm.environment.get(\"commonTests\"))();\n\npm.test(\"Response should be an array\", function () {\n        pm.expect(jsonData).to.be.an('array');\n});\n\npm.test(\"Response should include requested episodes\", function () {\n        for(var i=0; i < episodeNumber; i++){\n            pm.expect(jsonData[i].id).to.equals(randomList[i]);\n        }\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {
+						"list": "{{randomList}}"
+					}
+				},
+				{
+					"id": "f7420277-43db-4e7f-90f8-847236476e34",
+					"name": "Get valid filtered characters by page",
+					"url": "https://rickandmortyapi.com/api/character/?name=rick&status=alive&page=2",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "name",
+							"value": "rick",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "status",
+							"value": "alive",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "page",
+							"value": "2",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e79ff480-9007-4cb6-b5c6-b7d23c19d5a8",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"eval(pm.environment.get(\"commonTests\"))();",
+									"",
+									"eval(pm.environment.get(\"responseContains\"))();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\neval(pm.environment.get(\"commonTests\"))();\n\neval(pm.environment.get(\"responseContains\"))();",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "f76f10a9-beb3-479b-8db9-8de39f2374f2",
+					"name": "Get an episode query with no results",
+					"url": "https://rickandmortyapi.com/api/episode/?name=rick&episode=S18",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "name",
+							"value": "rick",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "episode",
+							"value": "S18",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8741b154-d6f0-43dc-8536-2de1a100d4b1",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"eval(pm.environment.get(\"notFoundTests\"))();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\neval(pm.environment.get(\"notFoundTests\"))();",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "fc47df81-d199-4093-b2a8-f15996c7a014",
+					"name": "Get a character query with no results",
+					"url": "https://rickandmortyapi.com/api/character/?name=rick&status=alive&species=human&gender=female",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "name",
+							"value": "rick",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "status",
+							"value": "alive",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "species",
+							"value": "human",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "gender",
+							"value": "female",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8741b154-d6f0-43dc-8536-2de1a100d4b1",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"eval(pm.environment.get(\"notFoundTests\"))();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var jsonData = pm.response.json();\n\neval(pm.environment.get(\"notFoundTests\"))();",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e228b2d0-30c7-4422-977c-2af354e15fab",
+					"headers": "",
+					"pathVariables": {}
+				}
+			]
+		}
+	],
+	"environments": [
+		{
+			"id": "26a238da-5f3c-47a4-ab43-6a4f86545eb8",
+			"name": "rickandmorty",
+			"values": []
+		},
+		{
+			"id": "220b6422-86f1-4664-bfb9-3ff10f0dadf0",
+			"name": "My Workspace - globals",
+			"values": []
+		}
+	],
+	"headerPresets": [],
+	"globals": []
+}
