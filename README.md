@@ -17,5 +17,5 @@ API testing with Rick and Morty API with Postman.
 2. Using Newman:
 
     a. In terminal, run the following command:
-  
-    newman run https://www.getpostman.com/collections/322db34e13b5882987f3
+    
+        newman run https://www.getpostman.com/collections/322db34e13b5882987f3
